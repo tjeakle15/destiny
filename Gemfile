@@ -54,3 +54,5 @@ group :development do
   gem 'selenium-webdriver'
 end
 
+gem 'activeresource'
+gem 'hashie'

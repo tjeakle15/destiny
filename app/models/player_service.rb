@@ -1,5 +1,5 @@
 class PlayerService < DestinyResource
-  #1 is xbox
+  
   self.site = "http://www.bungie.net/Platform/Destiny/SearchDestinyPlayer/:membership_type/:gamertag/?ignorecase=true"
 
   def data_object
@@ -9,7 +9,7 @@ class PlayerService < DestinyResource
 
   def self.find(*arguments)
     if arguments.size > 2 or arguments.size == 0
-      raise "Can only pass two arguement for accounts and must pass in more than one."
+      raise "Can only pass two arguement for accounts and must pass in more than zero."
     elsif arguments.size == 1
       arguments.push(MembershipType::XBOX)
     end

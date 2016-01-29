@@ -53,6 +53,9 @@ group :development do
   gem 'launchy'
   gem 'selenium-webdriver'
 end
-
+# ORM and data_object type for app
 gem 'activeresource'
 gem 'hashie'
+# bootstrap
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'

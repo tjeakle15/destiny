@@ -1,0 +1,22 @@
+
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+ /* text-align: center;*/
+}
+
+.checkbox input[type=checkbox]{
+        margin-left: 0px;
+}
+
+caption{
+        color: #000 !important;
+        font-weight: bold !important;
+}
+
+.bold{
+        font-weight: bold;
+}
+

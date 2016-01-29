@@ -8,22 +8,22 @@ RSpec.describe GroupMemberListService, type: :model do
   end
 
   it "returns a list of 10 group members for xbox with type param" do
-    result = GroupMemberListService.find_ten_members(TestConstant::VALID_XBOX_GROUP_ID, MembershipType::XBOX)
+    result = GroupMemberListService.find_ten_members(TestConstant::VALID_XBOX_GROUP_ID, MembershipType::XBOX.id)
     expect(result.Response.results.size == 10)
   end
 
   it "returns a list of 10 group members for xbox with type param and page no" do
-    result = GroupMemberListService.find_ten_members(TestConstant::VALID_XBOX_GROUP_ID, MembershipType::XBOX, 1)
+    result = GroupMemberListService.find_ten_members(TestConstant::VALID_XBOX_GROUP_ID, MembershipType::XBOX.id, 1)
     expect(result.Response.results.size == 10)
   end
 
   it "returns a list of 10 group members for playstation with type param " do
-    result = GroupMemberListService.find_ten_members(TestConstant::VALID_PLAYSTATION_GROUP_ID, MembershipType::PLAYSTATION)
+    result = GroupMemberListService.find_ten_members(TestConstant::VALID_PLAYSTATION_GROUP_ID, MembershipType::PLAYSTATION.id)
     expect(result.Response.results.size == 10)
   end
 
   it "returns a list of 10 group members for playstation with type param and page no" do
-    result = GroupMemberListService.find_ten_members(TestConstant::VALID_PLAYSTATION_GROUP_ID, MembershipType::PLAYSTATION, 1)
+    result = GroupMemberListService.find_ten_members(TestConstant::VALID_PLAYSTATION_GROUP_ID, MembershipType::PLAYSTATION.id, 1)
     expect(result.Response.results.size == 10)
   end
 
@@ -33,13 +33,13 @@ RSpec.describe GroupMemberListService, type: :model do
   end
 
   it "returns the full data object list of group members for xbox with member type param" do
-    result = GroupMemberListService.find_all_members_data_object(TestConstant::VALID_XBOX_GROUP_ID, MembershipType::XBOX)
+    result = GroupMemberListService.find_all_members_data_object(TestConstant::VALID_XBOX_GROUP_ID, MembershipType::XBOX.id)
     expect(result.size > 10)
   end
 
 
   it "returns the full data object list of group members for playstation" do
-    result = GroupMemberListService.find_all_members_data_object(TestConstant::VALID_PLAYSTATION_GROUP_ID, MembershipType::PLAYSTATION)
+    result = GroupMemberListService.find_all_members_data_object(TestConstant::VALID_PLAYSTATION_GROUP_ID, MembershipType::PLAYSTATION.id)
     expect(result.size > 10)
   end
 

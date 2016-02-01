@@ -28,7 +28,7 @@ RSpec.describe PlayerService, type: :model do
   end
 
   it "returns nothing when invalid platform is specified" do
-    player_service = PlayerService.find(TestConstant::VALID_XBOX_GAMERTAG, TestConstant::INVALID_MEMBERSHIP_TYPE)
+    player_service = PlayerService.find(TestConstant::VALID_XBOX_GAMERTAG, TestConstant::INVALID_MEMBERSHIP_TYPE_ID)
     expect(player_service.ErrorCode.eql?(TestConstant::INVALID_MEMBERSHIP_TYPE_ERROR_CODE))
   end
 

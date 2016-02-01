@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Destiny
   const_set("LINK_ROOT", "http://bungie.net")
+
   class Application < Rails::Application
     config.generators do |g|
       g.test_framework :rspec,

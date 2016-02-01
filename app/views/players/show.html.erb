@@ -12,6 +12,18 @@
 
 <h4>Characters</h4>
 
+<% for character in @characters %>
+  <div class="character panel panel-default">
+    <div class="panel-heading">
+      Level <%= character.level %> <%= character.class_type.name %> (<%= character.light_level %> light)
+    </div>
+    <div style="background-repeat: no-repeat; background-image: url('<%= "#{character.emblem_background_url}" %>');">
+      <%= image_tag "#{character.emblem_url}" %>
+    </div>
+  </div>
+<% end %>
+
+<!--
   <% for character in @player.account_service.character_data_objects%>
     <div class="character">
       <div style="background-repeat: no-repeat; background-image: url('<%= "#{Destiny::LINK_ROOT}#{character.background_path}" %>');"><%= image_tag "#{Destiny::LINK_ROOT}#{character.emblem_path}" %></div>
@@ -20,7 +32,6 @@
       </p>
     </div>
   <% end %>
-
 
 <p>
   <%= @player.account_service.character_data_objects.inspect %>
@@ -35,3 +46,4 @@
   @player.account_service.data_object.inspect:<br />
   <%= @player.account_service.data_object.inspect %>
 </p>
+-->

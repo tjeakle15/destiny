@@ -2,6 +2,22 @@
   <style type="text/css">
     .character{
       margin-top: 20px; 
+      width: 474px;
+    }
+    .character_text{
+      float: right; 
+      color: #ffffff; 
+      text-align:right;
+    }
+    .character_type{
+      font-size: 20px;
+    }
+    .character_level{
+      font-size: 28px;
+    }
+    .character_light_level{
+      font-size: 14px;
+      color: #ffff00; 
     }
   </style>
 <% end %>
@@ -15,10 +31,21 @@
 <% for character in @characters %>
   <div class="character panel panel-default">
     <div class="panel-heading">
-      Level <%= character.level %> <%= character.class_type.name %> (<%= character.light_level %> light)
+      <%= character.class_type.name %>
     </div>
     <div style="background-repeat: no-repeat; background-image: url('<%= "#{character.emblem_background_url}" %>');">
       <%= image_tag "#{character.emblem_url}" %>
+      <div class="character_text">
+        <span class="character_type">
+          <%= character.class_type.name %>
+        </span><br class="character_break"/>
+        <span class="character_level">
+          <%= character.level %>
+        </span><br class="character_break"/>
+        <span class="character_light_level">
+          <%= character.light_level %>
+        </span>
+      </div>
     </div>
   </div>
 <% end %>

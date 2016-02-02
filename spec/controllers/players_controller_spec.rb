@@ -17,6 +17,11 @@ RSpec.describe PlayersController, type: :controller do
       get :search, {membership_type_id: 1, gamertag: TestConstant::INVALID_XBOX_GAMERTAG}
       expect(response).to redirect_to(root_url)
     end
+
+    it "redirects to index page when no gamertag was entered." do
+      get :search, {membership_type_id: 1, gamertag: ""}
+      expect(response).to redirect_to(root_url)
+    end
   end
 
   describe "GET #index" do

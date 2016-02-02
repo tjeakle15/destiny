@@ -6,6 +6,11 @@ class PlayersController < ApplicationController
 
   def search
 
+    if params[:gamertag].nil? or params[:gamertag].empty?
+      flash[:error] = "You must enter a gamertag to search for a player."
+      return redirect_to root_url
+    end
+
     player_service = PlayerService.find(params[:gamertag], params[:membership_type_id])
 
     if player_service.exists?
